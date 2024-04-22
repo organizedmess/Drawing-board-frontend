@@ -1,0 +1,22 @@
+<div class="header">
+    <h1 class="d-sm-flex justify-content-center overflow-hidden">Drawing Board</h1>
+    <img src="../../assets/drawing-board.png" alt="logo" class="d-sm-flex justify-content-center" style="width: 100px;">
+</div>
+
+<div class="container" class="h-100vh d-sm-flex justify-content-around align-items-center" >
+
+    <div id="join-room-container" class="d-sm-flex justify-content-center p-lg-5 flex-sm-wrap gap-2">
+        <button class="btn btn-primary w-100" (click)="joinRoom()">Join Room</button>
+        <input type="text" class="form-control" placeholder="Enter Room ID" [(ngModel)]="roomId">
+    </div>
+    
+    <div id="create-room-container" class="d-sm-flex justify-content-center p-lg-5 flex-sm-wrap w-33">
+        <button class="btn btn-primary w-100" (click)="createRoom()">Create Room</button>
+        <input type="text" class="form-control" style="visibility: hidden;" placeholder="Enter Room ID" [(ngModel)]="roomId">
+    </div>
+
+</div>
+
+<footer class="d-sm-flex justify-content-around border-top fw-bold footer-background w-100">
+    <p class="m-0">Hey! If you liked what I built, Please check out my <a href="" class="text-decoration-none ">Portfolio</a></p>
+</footer>

@@ -1,0 +1,62 @@
+@font-face{
+    font-family:'hollow';
+    src: url('../../assets/Cavana-mLj0P.ttf');
+}
+
+.h-100vh{
+    height: 80vh;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+.w-33{
+    width: 33%;
+}
+.footer-background{
+    background-color: black;
+    background-color: white;
+    align-items: center;
+}
+h1{
+    font-family: 'hollow';
+    font-size: 5em;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+    background-color: #323232;
+}
+
+#create-room-container{
+    border: 5px solid lightblue;
+    background: linear-gradient(90deg, rgba(224,241,242,1) 0%, rgba(255,255,255,1) 0%, rgba(158,228,255,1) 0%, rgba(195,251,255,1) 0%, rgba(109,255,246,1) 14%, rgba(70,241,255,1) 50%, rgba(43,202,252,1) 86%, rgba(0,212,255,1) 100%);
+    backdrop-filter: blur(20px);
+}
+
+#join-room-container{
+    border: 5px solid lightblue;
+    background: linear-gradient(90deg, rgba(224,241,242,1) 0%, rgba(255,255,255,1) 0%, rgba(158,228,255,1) 0%, rgba(195,251,255,1) 0%, rgba(109,255,246,1) 14%, rgba(70,241,255,1) 50%, rgba(43,202,252,1) 86%, rgba(0,212,255,1) 100%);
+    backdrop-filter: blur(20px);
+}
+
+footer{
+    margin-top: auto;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    background: rgb(224,241,242);
+    position: fixed;
+}
+.footer-background {
+    background: linear-gradient(90deg, rgba(224,241,242,1) 0%, rgba(255,255,255,1) 0%, rgba(158,228,255,1) 0%, rgba(195,251,255,1) 0%, rgba(109,255,246,1) 14%, rgba(70,241,255,1) 50%, rgba(43,202,252,1) 86%, rgba(0,212,255,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 0%, rgba(8,37,140,1) 24%, rgba(4,119,194,1) 81%, rgba(3,153,216,1) 94%, rgba(3,158,219,1) 100%);
+    color: #fff; 
+    padding: 15px 0;
+  }
+  
+a{
+    color: #1dffff;
+}
+  

@@ -1,0 +1,27 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+/* body, 
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
+} */
+
+:root {
+  --mdc-snackbar-supporting-text-color: white;  
+  --mdc-snackbar-container-color: #323232;
+  --mdc-snackbar-container-opacity: 1;  
+  --mdc-snackbar-container-z-index: 9999; 
+
+}
+.mat-mdc-button-touch-target{
+  background-color:white;
+}
+
+.cdk-overlay-container{
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  left: 40%;
+  top: 0;
+}

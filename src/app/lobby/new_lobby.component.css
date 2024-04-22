@@ -1,0 +1,80 @@
+/* Lobby container */
+.container {
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Join room and create room containers */
+  .join-room-container, .create-room-container {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Add a smooth transition on hover */
+  }
+  
+  /* Style hover effect */
+  .join-room-container:hover, .create-room-container:hover {
+    transform: scale(1.05); /* Increase size on hover */
+  }
+  
+  /* Transparent line between buttons */
+  .join-room-container::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.3); /* Slightly transparent blue */
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  /* Input field */
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  /* Button */
+  .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Footer */
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #f8f9fa; /* Light gray background */
+    border-top: 1px solid #ccc; /* Light gray border */
+  }
+  
+  .footer-background {
+    background-color: #343a40; /* Dark background color for footer */
+    color: #fff; /* White text color */
+    padding: 15px 0;
+  }
+  
+  .footer-background a {
+    color: #fff; /* White link color */
+    text-decoration: none;
+  }
+  
+  .footer-background a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
