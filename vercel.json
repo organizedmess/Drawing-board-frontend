@@ -8,7 +8,7 @@
           "distDir": "dist/your-app-name",
           "installCommand": "npm install --force",
           "buildCommand": "npm run build -- --configuration production",
-          "nodeVersion": "18.x"
+          "nodeVersion": "22.x"
         }
       }
     ],
