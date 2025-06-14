@@ -1,22 +1,75 @@
-<div class="header">
-    <h1 class="d-sm-flex justify-content-center overflow-hidden">Drawing Board</h1>
-    <img src="../../assets/drawing-board.png" alt="logo" class="d-sm-flex justify-content-center" style="width: 100px;">
-</div>
-
-<div class="container" class="h-100vh d-sm-flex justify-content-around align-items-center" >
-
-    <div id="join-room-container" class="d-sm-flex justify-content-center p-lg-5 flex-sm-wrap gap-2">
-        <button class="btn btn-primary w-100" (click)="joinRoom()">Join Room</button>
-        <input type="text" class="form-control" placeholder="Enter Room ID" [(ngModel)]="roomId">
+<div class="min-vh-100 d-flex flex-column bg-gradient">
+    <!-- Animated Background -->
+    <div class="position-fixed top-0 left-0 w-100 h-100 bg-animation">
+      <div class="circle-position-1"></div>
+      <div class="circle-position-2"></div>
+      <div class="circle-position-3"></div>
     </div>
-    
-    <div id="create-room-container" class="d-sm-flex justify-content-center p-lg-5 flex-sm-wrap w-33">
-        <button class="btn btn-primary w-100" (click)="createRoom()">Create Room</button>
-        <input type="text" class="form-control" style="visibility: hidden;" placeholder="Enter Room ID" [(ngModel)]="roomId">
-    </div>
-
-</div>
-
-<footer class="d-sm-flex justify-content-around border-top fw-bold footer-background w-100">
-    <p class="m-0">Hey! If you liked what I built, Please check out my <a href="https://my-portfolio-puce-beta.vercel.app/" class="text-decoration-none ">Portfolio</a></p>
-</footer>
+  
+    <!-- Header -->
+    <header class="text-center py-4 position-relative z-index-2">
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="../../assets/drawing-board.png" alt="logo" class="img-fluid floating" style="width: 70px;">
+        <h1 class="display-4 fw-bold m-0 text-shadow">The Drawing Board</h1>
+      </div>
+      <p class="text-warning mt-2 mb-0">Collaborate in real-time with your team</p>
+    </header>
+  
+    <!-- Main Content -->
+    <main class="flex-grow-1 d-flex align-items-center py-5 position-relative z-index-2">
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <!-- Join Room Card -->
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-lg h-100 hover-scale bg-blur">
+              <div class="card-body text-center p-4 p-lg-5">
+                <div class="icon-container bg-primary-light mb-4 mx-auto">
+                  <i class="bi bi-door-open-fill text-primary fs-2"></i>
+                </div>
+                <h2 class="card-title h3 mb-3 text-warning">Join Existing Room</h2>
+                <div class="mb-4">
+                  <input type="text" class="form-control form-control-lg text-warning border-secondary" 
+                         placeholder="Enter Room ID" [(ngModel)]="roomId">
+                </div>
+                <button class="btn btn-primary btn-lg w-100 py-3 rounded-pill fw-bold hover-grow" (click)="joinRoom()">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Join Room
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Divider -->
+          <div class="col-lg-1 d-none d-lg-flex align-items-center justify-content-center position-relative">
+            <div class="h-50 w-1 bg-white bg-opacity-25 rounded-pill"></div>
+            <span class="position-absolute bg-dark px-3 py-1 rounded-pill text-warning fw-bold">OR</span>
+          </div>
+  
+          <!-- Create Room Card -->
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-lg h-100 hover-scale bg-blur">
+              <div class="card-body text-center p-4 p-lg-5">
+                <div class="icon-container bg-success-light mb-4 mx-auto">
+                  <i class="bi bi-plus-circle-fill text-success fs-2"></i>
+                </div>
+                <h2 class="card-title h3 mb-3 text-warning">Create New Room</h2>
+                <p class="text-secondary mb-4">Start a fresh creative session !!</p>
+                <button class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold hover-grow" (click)="createRoom()">
+                  <i class="bi bi-lightning-fill me-2"></i>Create Room
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <!-- Footer -->
+    <footer class="py-3 position-relative z-index-2 bg-dark bg-opacity-50">
+      <div class="container">
+        <p class="m-0 text-center text-light">
+          Crafted with <i class="bi bi-heart-fill text-danger"></i> by 
+          <a href="https://my-portfolio-puce-beta.vercel.app/" class="text-decoration-none text-warning fw-bold hover-underline">Dhruv</a>
+        </p>
+      </div>
+    </footer>
+  </div>
