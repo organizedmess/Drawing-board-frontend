@@ -1,24 +1,26 @@
-{   
+{
     "version": 2,
     "builds": [
-        {
+      {
         "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-            "distDir": "dist/your-app-name",
-            "installCommand": "npm install --legacy-peer-deps",
-            "buildCommand": "npm run build -- --prod"
-            }
+          "distDir": "dist/your-app-name",
+          "installCommand": "npm install --force",
+          "buildCommand": "npm run build -- --configuration production",
+          "nodeVersion": "18.x"
         }
+      }
     ],
-   "routes": [
-    {
-        "src": ".",
-        "dest": "/"
-    },
-    {
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/",
+        "continue": true
+      },
+      {
         "src": "/home/:mode/:id",
         "dest": "/"
-    }
-   ] 
-}
+      }
+    ]
+  }
