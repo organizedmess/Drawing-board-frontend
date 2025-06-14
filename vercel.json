@@ -3,19 +3,12 @@
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/angular",
+        "use": "@vercel/static-build",
         "config": {
           "nodeVersion": "22.x",
           "installCommand": "npm install --force",
           "buildCommand": "npm run build",
           "outputDirectory": "dist/board-project/browser"
-        }
-      },
-      {
-        "src": "server.ts",
-        "use": "@vercel/node",
-        "config": {
-          "nodeVersion": "22.x"
         }
       }
     ],
