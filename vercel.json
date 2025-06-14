@@ -3,11 +3,18 @@
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/static-build",
+        "use": "@vercel/angular",
         "config": {
-          "distDir": "dist/your-app-name",
+          "nodeVersion": "22.x",
           "installCommand": "npm install --force",
-          "buildCommand": "npm run build -- --configuration production",
+          "buildCommand": "npm run build",
+          "outputDirectory": "dist/board-project/browser"
+        }
+      },
+      {
+        "src": "server.ts",
+        "use": "@vercel/node",
+        "config": {
           "nodeVersion": "22.x"
         }
       }
@@ -15,8 +22,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/",
-        "continue": true
+        "dest": "/$1"
       },
       {
         "src": "/home/:mode/:id",
