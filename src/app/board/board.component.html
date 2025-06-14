@@ -1,100 +1,132 @@
-
-<div class="container" >
-
-  <section class="tools-board">
-    
-    <div class="row">
-      <label class="title">Shapes</label>
-      <ul class="options">
-        
-        <li class="option tool" id="rectangle" (click)="ToolChange('rectangle')">
-          <img src="../../assets/rectangle.svg" alt="rectangle-icon" loading="lazy">
-          <span>Rectangle</span>
+<div class="container-fluid drawing-app">
+  <!-- Tools Board - Enhanced with better organization and styling -->
+  <section class="tools-board glass-card">
+    <!-- Shapes Section -->
+    <div class="tool-section">
+      <h3 class="section-header">
+        <i class="bi bi-shapes"></i>
+        <span>Shapes</span>
+      </h3>
+      <ul class="tool-options">
+        <li class="tool-option" id="rectangle" (click)="ToolChange('rectangle')">
+          <div class="tool-icon">
+            <img src="../../assets/rectangle.svg" alt="rectangle-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Rectangle</span>
         </li>
         
-        <li class="option tool" id="circle" (click)="ToolChange('circle')">
-          <img src="../../assets/circle.svg" alt="circle-icon" loading="lazy">
-          <span>Circle</span>
+        <li class="tool-option" id="circle" (click)="ToolChange('circle')">
+          <div class="tool-icon">
+            <img src="../../assets/circle.svg" alt="circle-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Circle</span>
         </li>
 
-        <li class="option tool" id="triangle" (click)="ToolChange('triangle')">
-          <img src="../../assets/triangle.svg" alt="triangle-icon" loading="lazy">
-          <span>Triangle</span>
+        <li class="tool-option" id="triangle" (click)="ToolChange('triangle')">
+          <div class="tool-icon">
+            <img src="../../assets/triangle.svg" alt="triangle-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Triangle</span>
         </li>
 
-        <li class="option tool" id="line" (click)="ToolChange('line')">
-          <img src="../../assets/line.svg" alt="line-icon" loading="lazy">
-          <span>Line</span>
+        <li class="tool-option" id="line" (click)="ToolChange('line')">
+          <div class="tool-icon">
+            <img src="../../assets/line.svg" alt="line-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Line</span>
         </li>
-
-        <li class="option">
-          <input type="checkbox" id="fill-color">
-          <label for="fill-color">Fill color</label>
-        </li>
-
-      </ul>
-    </div>
-
-    <div class="row">
-      <label class="title">Tools</label>
-      <ul class="options">
-        
-        <li class="option active tool" id="brush" (click)="ToolChange('brush')">
-          <img src="../../assets/brush.svg" alt="brush-icon" loading="lazy">
-          <span>Brush</span>
-        </li>
-        <li class="option tool" id="eraser" (click)="ToolChange('eraser')">
-          <img src="../../assets/eraser.svg" alt="eraser-icon" loading="lazy">
-          <span>Eraser</span>
-        </li>
-        <li class="option">
-          <input type="range" id="size-slider" min="1" max="30" value="5" (change)="SizeSlider()">
-        </li>
-
-      </ul>
-    </div>
-
-    <div class="row colors">
-      <label class="title">Color</label>
-      
-      <ul class="options">
-        <li class="option" (click)="ColorPicker($event, 'white')" ></li>
-        <li class="option selected" (click)="ColorPicker($event, 'black')"></li>
-        <li class="option" (click)="ColorPicker($event, 'red')"></li>
-        <li class="option" (click)="ColorPicker($event, 'lightGreen')"></li>
       </ul>
       
-      <label for="color-picker">Custom</label>
-      <input type="color" id="color-picker" value="#4A98F7" (change)="CustomColorChange()">
-
+      <div class="fill-option">
+        <input type="checkbox" id="fill-color">
+        <label for="fill-color">Fill color</label>
+      </div>
     </div>
 
-    <div class="row buttons">
-      <button class="clear-canvas" (click)="ClearCanvas()">Clear Canvas</button>
-      <button class="save-img" (click)="SaveImage()">Save As Image</button>
+    <!-- Tools Section -->
+    <div class="tool-section">
+      <h3 class="section-header">
+        <i class="bi bi-brush"></i>
+        <span>Tools</span>
+      </h3>
+      <ul class="tool-options">
+        <li class="tool-option active" id="brush" (click)="ToolChange('brush')">
+          <div class="tool-icon">
+            <img src="../../assets/brush.svg" alt="brush-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Brush</span>
+        </li>
+        
+        <li class="tool-option" id="eraser" (click)="ToolChange('eraser')">
+          <div class="tool-icon">
+            <img src="../../assets/eraser.svg" alt="eraser-icon" loading="lazy">
+          </div>
+          <span class="tool-label">Eraser</span>
+        </li>
+      </ul>
+      
+      <div class="brush-size">
+        <label for="size-slider">Brush Size: <span id="size-value">5</span></label>
+        <input type="range" id="size-slider" min="1" max="30" value="5" (change)="SizeSlider()">
+      </div>
     </div>
 
+    <!-- Colors Section -->
+    <div class="tool-section">
+      <h3 class="section-header">
+        <i class="bi bi-palette"></i>
+        <span>Colors</span>
+      </h3>
+      <ul class="color-options">
+        <li class="color-option" (click)="ColorPicker($event, 'white')" style="background: white;"></li>
+        <li class="color-option selected" (click)="ColorPicker($event, 'black')" style="background: black;"></li>
+        <li class="color-option" (click)="ColorPicker($event, 'red')" style="background: red;"></li>
+        <li class="color-option" (click)="ColorPicker($event, 'lightGreen')" style="background: lightgreen;"></li>
+      </ul>
+      
+      <div class="custom-color">
+        <label for="color-picker">Custom Color</label>
+        <input type="color" id="color-picker" value="#4A98F7" (change)="CustomColorChange()">
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="btn-clear" (click)="ClearCanvas()">
+        <i class="bi bi-trash"></i>
+        Clear Canvas
+      </button>
+      <button class="btn-save" (click)="SaveImage()">
+        <i class="bi bi-download"></i>
+        Save As Image
+      </button>
+    </div>
   </section>
 
-
+  <!-- Drawing Board - Enhanced canvas area -->
   <section class="drawing-board">
-    <canvas 
-      (mousedown)="startDrawing($event)" 
-      (mousemove)="DrawingBrush($event)"
-      (mousemove)="drawRect($event)"
-      (mousemove)="drawCircle($event)"
-      (mousemove)="drawTraingle($event)"
-      (mousemove)="drawLine($event)"
-      (mouseup)="stopDrawing($event)"
-      (mouseleave)="stopDrawing($event)"
-      >
-    </canvas>
-    
-    <div class="room-info">
-      <h2>ROOM ID:<b>{{ roomId }}</b></h2>
-      <button mat-raised-button class="copy-btn" (click)="CopyToClipboard()">Copy</button>
+    <div class="canvas-container">
+      <canvas #drawingCanvas
+              (mousedown)="startDrawing($event)" 
+              (mousemove)="DrawingBrush($event)"
+              (mousemove)="drawRect($event)"
+              (mousemove)="drawCircle($event)"
+              (mousemove)="drawTraingle($event)"
+              (mousemove)="drawLine($event)"
+              (mouseup)="stopDrawing($event)"
+              (mouseleave)="stopDrawing($event)">
+      </canvas>
     </div>
-
+    <!-- Room Info - Enhanced with better styling -->
+    <div class="room-info glass-card">
+      <div class="room-id">
+        <i class="bi bi-door-closed"></i>
+        <h3>ROOM ID: <strong>{{ roomId }}</strong></h3>
+      </div>
+      <button class="btn-copy" (click)="CopyToClipboard()">
+        <i class="bi bi-clipboard"></i>
+        Copy
+      </button>
+    </div>
   </section>
-
 </div>
